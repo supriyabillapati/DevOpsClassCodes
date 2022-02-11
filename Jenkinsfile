@@ -40,7 +40,7 @@ pipeline{
            }	
           }
            stage('MetricCheck'){
-		   agent {label 'slave'}
+		   agent {label 'slave1'}
               steps{
                   sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
               }
@@ -51,7 +51,7 @@ pipeline{
            }		
           }
           stage('Package'){
-		  agent {label 'slave'}
+		  agent {label 'slave1'}
               steps{
                   sh 'mvn package'
               }
