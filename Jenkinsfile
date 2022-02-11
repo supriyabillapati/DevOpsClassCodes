@@ -7,14 +7,14 @@ pipeline{
     agent none
       stages{
            stage('Checkout'){
-		   agent {label 'slave'}
+		   agent {label 'slave1'}
                steps{
 		 echo 'cloning..'
                  git 'https://github.com/Sonal0409/DevOpsClassCodes.git'
               }
           }
           stage('Compile'){
-		  agent {label 'slave'}
+		  agent {label 'slave1'}
               steps{
                   echo 'compiling..'
                   sh 'mvn compile'
